@@ -1,0 +1,126 @@
+/* Sets the basic colors */
+:root {
+    --baseColor: #33393f;
+    --mainTextColor: rgba(232, 102, 236, 0.6);
+    --mainTextColorGradient: rgba(232, 102, 236, 0.3);
+    --lightTextColor: #e0eae4;
+}
+/* Default font size */
+* {
+    font-size: 15px;
+}
+
+body {
+    background-color: var(--baseColor);
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--mainTextColor);
+}
+
+/* Heading and paragraph within header */
+header {
+    padding: 20px;
+    color: var(--mainTextColor);
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 60px;
+}
+
+header p {
+    color: var(--lightTextColor);
+}
+
+/* Initialize Flex for Desktop screen with 3 articles in a row */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 15px 0 15px;
+}
+
+h2 {
+    border: 2px solid var(--lightTextColor);
+    border-radius: 5px;
+    background-color: var(--baseColor);
+    position: relative;
+    bottom: 40px;
+    padding: 5px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex: 1 1 calc(100%/3);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+    border: 2px dashed var(--lightTextColor);
+    margin: 20px;
+    padding: 20px;
+}
+
+article p {
+    position: relative;
+    bottom: 20px;
+}
+
+/* Create transitions for articles */
+.card h2 {
+    transition: all 0.5s ease-in-out;
+}
+
+.card:hover, 
+.card:hover h2 {
+    box-shadow: inset 0px 0px 8px rgba(232, 102, 236, 1),
+    0 0 15px rgba(232, 102, 236, 1);
+}
+
+/* Code cell */
+pre {
+    font-family: monospace;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+div.codeBackground {
+    display: flex;
+    align-content: center;
+    flex-grow: 1;
+    border-radius: 8px;s
+    padding: 10px;
+    color: var(--lightTextColor);
+    background-image: linear-gradient(
+        var(--mainTextColorGradient) 0%,
+        var(--mainTextColor) 100%
+    );
+}
+
+/* Footer formatting */
+footer {
+    margin: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Media Query for tablet and cell phone */
+@media screen and (max-width: 992px) {
+    article {
+        flex: 1 1 50%;
+    }    
+}
+
+@media screen and (max-width: 768px) {
+    article {
+        flex: 1 1 100%;
+    }    
+}
