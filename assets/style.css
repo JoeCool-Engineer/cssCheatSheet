@@ -86,16 +86,23 @@ article p {
 
 /* Code cell */
 pre {
+    display: flex;
     font-family: monospace;
     font-size: 10px;
     line-height: 1.5;
+}
+
+code {
+    display: flex;
+    margin-left: 10px;
+    align-items: center;
 }
 
 div.codeBackground {
     display: flex;
     align-content: center;
     flex-grow: 1;
-    border-radius: 8px;s
+    border-radius: 8px;
     padding: 10px;
     color: var(--lightTextColor);
     background-image: linear-gradient(
@@ -106,11 +113,37 @@ div.codeBackground {
 
 /* Footer formatting */
 footer {
-    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    margin: 20px 0 40px 0;
     font-size: 25px;
     font-weight: bold;
     text-align: center;
+    height: 100px;
 }
+
+/* link styling */
+a:link {
+    color: var(--mainTextColorGradient);
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: var(--mainTextColor);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    font-size: 20px;
+    color: var(--mainTextColorGradient);
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: var(--mainTextColor);
+    text-decoration: underline;
+  }
 
 /* Media Query for tablet and cell phone */
 @media screen and (max-width: 992px) {
